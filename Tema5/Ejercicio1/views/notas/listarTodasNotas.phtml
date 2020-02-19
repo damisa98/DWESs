@@ -1,0 +1,6 @@
+<?php
+    while ($notas = $listarTodasNotas->fetchObject()){
+        echo $notas->nombre . " - " . $notas->titulo . " - " . $notas->descripcion . "<br>"; 
+    }
+?>
+

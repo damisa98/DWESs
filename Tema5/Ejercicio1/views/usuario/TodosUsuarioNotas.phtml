@@ -1,0 +1,6 @@
+<?php
+    while ($user = $todosUsuarios->fetchObject()){
+        echo $user->id . "-->" . $user->nombre . " "  . $user->titulo . " " . $user->descripcion . "<br>";    
+    }
+?>
+

@@ -1,0 +1,37 @@
+<?php
+require_once("views/mostrar/datos.phtml");
+
+?>
+<table class="table table-striped table-sm table-dark">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Link</th>
+        </tr>
+    </thead>
+    <tbody>
+
+<?php
+
+    while ($datos = $AlgunosDatos->fetchObject()){
+        if($datos->type=="p"){
+            echo "<tr>";
+            echo "<td scope='col' class='bg-info'>". $datos->name . "</td>".
+            "<td scope='col' class='bg-info'>". $datos->address .  "</td>".
+            "<td scope='col' class='bg-info'>".$datos->telf  .  "</td>".
+            "<td scope='col' class='bg-info'>"."<a href='index.php?c=Datos&&a=MotrarUno&&id=$datos->id'>Listar</a>" . "</td>";    
+            echo "</tr>";
+        }else{
+            echo "<tr>";
+            echo "<td scope='col'>". $datos->name . "</td>".
+            "<td scope='col'>". $datos->address .  "</td>".
+            "<td scope='col'>".$datos->telf  .  "</td>".
+            "<td scope='col'>"."<a href='index.php?c=Datos&&a=MotrarUno&&id=$datos->id'>Listar</a>" . "</td>";    
+            echo "</tr>";
+        }
+    }
+?>
+    </tbody>
+</table>

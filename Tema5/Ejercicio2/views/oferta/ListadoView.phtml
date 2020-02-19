@@ -1,0 +1,18 @@
+<h1>Pizzeria de damisa</h1>
+
+<a href="index.php?c=Oferta&&a=NuevaOferta">Crear Oferta</a>
+
+<hr>
+
+
+<?php
+    while ($oferta = $ListadoView->fetchObject()){
+        echo '<h3>' . $oferta->titulo . '</h3>';
+        echo '<img src=uploads/img/'.$oferta->imagen.'>';
+        echo '<p>' . $oferta->descripcion . '</p>';
+        
+        echo '<a href="index.php?c=Oferta&&a=modificar&&id='.$oferta->id.'">Modificar</a>';
+        echo '<a href="index.php?c=Oferta&&a=borrarOferta&&id='.$oferta->id.'">Borrar</a>';
+    }
+?>
+
